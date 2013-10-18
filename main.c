@@ -68,9 +68,6 @@ int main(int argc, const char * argv[])
 		}
 	}
 	
-	/* modify the time according to timezone offset */
-	
-
     /* Format and print the time, "ddd yyyy-mm-dd hh:mm:ss zzz" */
     printf ("%s: ", city);
 	strftime(buf, sizeof(buf), "%a %Y-%m-%d %H:%M:%S\n", ts);
