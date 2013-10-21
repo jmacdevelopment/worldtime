@@ -9,4 +9,8 @@ EXECUTABLE=worldtime
 
 worldtime: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
+	
+clean: 
+	rm -rf *.o worldtime
+	
 
