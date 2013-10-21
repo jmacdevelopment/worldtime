@@ -19,6 +19,7 @@ typedef struct
 
 static const tz_t table[] =
 {
+	{ "Washington" , -5 },
 	{ "Philadelphia", -5 },
 	{ "NewYork", -5 },
 	{ "Chicago", -6 },
