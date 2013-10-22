@@ -5,10 +5,10 @@ OBJ = main.o
 EXECUTABLE=worldtime
 
 %.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -c -g3 -O0 -o $@ $< $(CFLAGS)
 
 worldtime: $(OBJ)
-	gcc -o $@ $^ $(CFLAGS)
+	gcc -g3 -O0 -o $@ $^ $(CFLAGS)
 	
 clean: 
 	rm -rf *.o worldtime
