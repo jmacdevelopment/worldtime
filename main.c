@@ -19,16 +19,16 @@ typedef struct
 
 static const tz_t table[] =
 {
-	{ "Washington" , -5 },
-	{ "Philadelphia", -5 },
-	{ "NewYork", -5 },
-	{ "Chicago", -6 },
-	{ "Denver", -7 },
-	{ "SanFrancisco", -8 },
-	{ "London", 0 },
-	{ "Paris", 1 },
-	{ "Helsinki", 2 },
-	{ "Beijing", 8 },
+	{ "washington" , -5 },
+	{ "philadelphia", -5 },
+	{ "newyork", -5 },
+	{ "chicago", -6 },
+	{ "denver", -7 },
+	{ "sanfrancisco", -8 },
+	{ "london", 0 },
+	{ "paris", 1 },
+	{ "helsinki", 2 },
+	{ "beijing", 8 },
 	{ NULL, 0 }
 };
 
@@ -37,12 +37,14 @@ int main(int argc, const char * argv[])
 
     time_t		now=0, newtime=0;
     struct tm	*ts;
-	tz_t		*p;
+	const tz_t	*p;
+	char		input[30];
     char		buf[80];
+	char		city[80] = "Localtime";
 	char		found=0;
 	long		offset=0;
-	char		city[80] = "Localtime";
 	int			dst=0;
+	int			i=0;
 	
 	/* Get the current time. */
     now = time(NULL);
@@ -50,9 +52,17 @@ int main(int argc, const char * argv[])
 	
 	if (argc > 1)
 	{
+		/* convert input to all lower case */
+		strcpy (input, argv[1]);
+		for (i=0; i<=strlen(input); i++)
+		{
+			if (input[i]>=65 && input[i]<=90)
+				input[i] = input[i] + 32;
+		}
+		
 		for (p=table; p->name!=NULL; p++)
 		{
-			if (strcmp (p->name, argv[1]) == 0)
+			if (strcmp (p->name, input) == 0)
 			{
 				found = 1;
 				if (ts->tm_isdst == 1)
