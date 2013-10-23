@@ -32,6 +32,8 @@ static const tz_t table[] =
 	{ NULL, 0 }
 };
 
+static const char prompt[] = "worldtime>";
+
 int main(int argc, const char * argv[])
 {
 
@@ -76,12 +78,12 @@ int main(int argc, const char * argv[])
 		}
 		if (found == 0)
 		{
-			printf ("Error: City not found in db\n");
+			printf ("%s --- ERROR: City not found in db\n", prompt);
 		}
 	}
 	
     /* Format and print the time, "ddd yyyy-mm-dd hh:mm:ss zzz" */
-    printf ("%s: ", city);
+    printf ("%s %s: ", prompt, city);
 	strftime(buf, sizeof(buf), "%a %Y-%m-%d %H:%M:%S\n", ts);
     puts(buf);
 	
