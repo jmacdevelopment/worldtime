@@ -78,7 +78,7 @@ int main(int argc, const char * argv[])
 		}
 		if (found == 0)
 		{
-			printf ("%s --- ERROR: City not found in db\n", prompt);
+			printf ("--- ERROR: City not found in db\n");
 		}
 	}
 	
