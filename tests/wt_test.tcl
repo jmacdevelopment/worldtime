@@ -25,7 +25,6 @@ proc expect_flush {} {
 		-timeout 0
 		aasdXXCXCXxQQWR
 	}
-	expect *
 	set expect_out(buffer) ""
 }
 
