@@ -1,4 +1,4 @@
-#!/usr/bin/expect -f
+#!/usr/bin/expect -df
 # waldo: an expect script template to check MGW via magoo
 # test suit is arranged in "test steps", each test step
 # results in PASS or FAIL.
