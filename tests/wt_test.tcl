@@ -1,4 +1,4 @@
-#!/usr/bin/expect -df
+#!/usr/bin/expect -f
 # waldo: an expect script template to check MGW via magoo
 # test suit is arranged in "test steps", each test step
 # results in PASS or FAIL.
@@ -68,7 +68,7 @@ proc test_step {x} {
 # *** end of procedures section ***
 
 # start worldtime testing 
-expect_flush
+#expect_flush
 
 test_step "run worldtime with no arguments"
 spawn "./worldtime"
