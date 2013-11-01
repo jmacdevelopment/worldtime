@@ -19,6 +19,8 @@ proc DEBUG {x} {
 }
 # flush expect buffer
 
+# NOTE: this routine is incompatible with Jenkins output
+# I don't know why
 proc expect_flush {} {
 	global expect_out
 	expect {
